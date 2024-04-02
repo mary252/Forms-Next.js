@@ -1,0 +1,23 @@
+.lg-bg{
+  background-image: url("../assets/images/bg-sidebar-desktop.svg");
+  // background-position: center;
+  background-repeat: no-repeat;
+}
+.card{
+  background-color: #fff;
+  border-radius: 25px;
+}
+.state-number{
+  position: relative;
+  left: 36%;
+  top: 15%;
+}
+.circle {
+  // background-color:#fff;
+  border:1px solid #fff;    
+  height:40px;
+  border-radius:50%;
+  -moz-border-radius:50%;
+  -webkit-border-radius:50%;
+  width:40px;
+}
