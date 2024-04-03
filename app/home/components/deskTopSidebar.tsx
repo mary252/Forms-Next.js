@@ -7,7 +7,7 @@ export default function DesktopSidebar({
 }) {
 
   return (
-    <div className="columns-4xl grid-cols-2 invisible md:visible sm:invisible mx-3 p-5 my-3 lg-bg ">
+    <div className="invisible w-72 h-44 md:visible sm:invisible mx-3 p-5 my-3 lg-bg ">
       <div className="flex my-3 ">
         <div
           className={clsx(
@@ -38,15 +38,15 @@ export default function DesktopSidebar({
         <div className={clsx(
           'circle',
           {
-            'bg-white': pathname === "",
-            '': pathname !== "",
+            'bg-white': pathname === "/home/plan",
+            '': pathname !== "/home/plan",
           },
         )}>
           <p className={clsx(
             'state-number ',
             {
-              'text-dark': pathname === "",
-              'text-white': pathname !== "",
+              'text-dark': pathname === "/home/plan",
+              'text-white': pathname !== "/home/plan",
             },
           )}>2</p>
         </div>

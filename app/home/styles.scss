@@ -2,6 +2,13 @@
   background-image: url("../assets/images/bg-sidebar-desktop.svg");
   // background-position: center;
   background-repeat: no-repeat;
+  height: 62vh;
+}
+.sm-bg{
+  background-image: url("../assets/images/bg-sidebar-mobile.svg");
+  // background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .card{
   background-color: #fff;
@@ -20,4 +27,72 @@
   -moz-border-radius:50%;
   -webkit-border-radius:50%;
   width:40px;
+}
+
+.margins {
+  padding: 50px;
+  width: 65%;
+}
+
+.large-ft{
+  font-size: 40px;
+}
+
+.field-input{
+  border: 2px solid rgb(148 163 184);
+  border-radius: 10px;
+  padding: 10px;
+  width: 100%;
+}
+
+.field-input:hover{
+  border-color: rgb(71 85 105);
+}
+
+.error {
+  border-color: rgb(220 38 38 );;
+}
+
+.button-wrap{
+  background-color: rgb(40, 38, 145);
+  color: #fff;
+  border-radius: 7px;
+}
+
+.div-wrap{
+
+}
+.plan-card{
+  border: 2px solid rgb(148 163 184);
+  border-radius: 10px;
+  padding: 10px;
+  width: 100%;
+  display: block;
+}
+.selected-plan-card{
+  border-color: rgb(67 56 202);
+  background-color: rgb(238 242 255);
+}
+@media screen and (max-width:700px) {
+  .div-wrap{
+    position: fixed;
+    background-color: #fff;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+  }
+ 
+  .margins {
+    padding: 30;
+    margin: 20px;
+    width: 90%;
+    background-color: #fff;
+    border-radius: 10px;
+    position: absolute;
+    top: 14%;
+  }
+
+  .plan-card{
+    display: flex;
+  }
 }
