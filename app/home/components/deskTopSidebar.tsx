@@ -81,15 +81,15 @@ export default function DesktopSidebar({
         <div className={clsx(
           'circle',
           {
-            'bg-white': pathname === "/home/checkout",
-            '': pathname !== "/home/checkout",
+            'bg-white': pathname === ("/home/checkout" || "/home/thankyou"),
+            '': pathname !== ("/home/checkout" || "/home/thankyou"),
           },
         )}>
           <p className={clsx(
             'state-number ',
             {
-              'text-dark': pathname === "/home/checkout",
-              'text-white': pathname !== "/home/checkout",
+              'text-dark': pathname === ("/home/checkout" || "/home/thankyou") ,
+              'text-white': pathname !== ("/home/checkout" || "/home/thankyou")  ,
             },
           )}>4</p>
         </div>

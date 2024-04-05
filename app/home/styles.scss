@@ -90,6 +90,11 @@
   background-color: rgb(40, 38, 145);
 
 }
+
+hr.solid {
+  
+  border-top: 1px solid #bbb;
+}
 @media screen and (max-width:700px) {
   .div-wrap{
     position: fixed;
