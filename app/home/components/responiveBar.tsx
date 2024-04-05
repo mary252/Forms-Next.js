@@ -51,8 +51,8 @@ export default function ResponsiveBar({
         className={clsx(
           'circle mx-2',
           {
-            'bg-white': pathname === ``,
-            '': pathname !== ``,
+            'bg-white': pathname === `/home/addons`,
+            '': pathname !== `/home/addons`,
           },
         )}
       >
@@ -60,8 +60,8 @@ export default function ResponsiveBar({
           className={clsx(
             'state-number ',
             {
-              'text-dark': pathname === ``,
-              'text-white': pathname !== ``,
+              'text-dark': pathname === `/home/addons`,
+              'text-white': pathname !== `/home/addons`,
             },
           )}
         >3</p>
@@ -71,8 +71,8 @@ export default function ResponsiveBar({
         className={clsx(
           'circle mx-2',
           {
-            'bg-white': pathname === ``,
-            '': pathname !== ``,
+            'bg-white': pathname === `/home/checkout`,
+            '': pathname !== `/home/checkout`,
           },
         )}
       >
@@ -80,8 +80,8 @@ export default function ResponsiveBar({
           className={clsx(
             'state-number ',
             {
-              'text-dark': pathname === ``,
-              'text-white': pathname !== ``,
+              'text-dark': pathname === `/home/checkout`,
+              'text-white': pathname !== `/home/checkout`,
             },
           )}
         >4</p>

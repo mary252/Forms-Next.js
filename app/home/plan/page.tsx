@@ -8,8 +8,11 @@ import proImage from "../../assets/images/icon-pro.svg"
 import clsx from "clsx";
 import Image from 'next/image'
 import { Switch } from "@nextui-org/switch";
+import { CartContext } from "../../context/mainContext";
 
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { useRouter } from 'next/navigation'
+
 const ubunto = Ubuntu({
   weight: ["300", '400', "500", '700'],
   style: ['normal', 'italic'],
@@ -17,9 +20,27 @@ const ubunto = Ubuntu({
   display: 'swap',
 })
 export default function Home() {
-  const [selected, setSelected] = useState(1)
-  const [isYearly, setIsYearly] = useState(false)
 
+  const {
+    AddSubType
+  } = useContext(CartContext);
+  const [selected, setSelected] = useState("Arcade")
+  const [isYearly, setIsYearly] = useState(false)
+  const [price, setPrice] = useState(0)
+  const router = useRouter()
+
+  const addType = () => {
+    console.log("hiiii")
+    AddSubType({
+      type: {
+        type: selected,
+        yearly: isYearly,
+        price: isYearly ? price * 10 : price
+      }
+    })
+    router.push("/home/addons")
+
+  }
   return (
     <div className=" p-5 margins">
       <h2 className={"text-slate-800 large-ft font-bold " + ubunto.className}>Select Your plan</h2>
@@ -29,11 +50,14 @@ export default function Home() {
           className={clsx(
             'plan-card cursor-pointer ',
             {
-              'selected-plan-card': selected === 1,
-              '': selected !== 1,
+              'selected-plan-card': selected === "Arcade",
+              '': selected !== "Arcade",
             },
           )}
-          onClick={() => setSelected(1)}
+          onClick={() => {
+            setSelected("Arcade")
+            setPrice(9)
+          }}
         >
           <Image src={arcadImage} alt="" className="md:mb-10 my-3 mr-3 md:mr-0" />
           <div>
@@ -50,11 +74,14 @@ export default function Home() {
           className={clsx(
             'plan-card cursor-pointer my-3',
             {
-              'selected-plan-card': selected === 2,
-              '': selected !== 2,
+              'selected-plan-card': selected === "Advanced",
+              '': selected !== "Advanced",
             },
           )}
-          onClick={() => setSelected(2)}
+          onClick={() => {
+            setSelected("Advanced")
+            setPrice(12)
+          }}
         >
           <Image src={advancedImage} alt="" className="md:mb-10 my-3 mr-3 md:mr-0" />
           <div>
@@ -71,11 +98,14 @@ export default function Home() {
           className={clsx(
             'plan-card cursor-pointer my-3',
             {
-              'selected-plan-card': selected === 3,
-              '': selected !== 3,
+              'selected-plan-card': selected === "Pro",
+              '': selected !== "Pro",
             },
           )}
-          onClick={() => setSelected(3)}
+          onClick={() => {
+            setSelected("Pro")
+            setPrice(15)
+          }}
         >
           <Image src={proImage} alt="" className="md:mb-10 my-3 mr-3 md:mr-0" />
           <div>
@@ -108,8 +138,12 @@ export default function Home() {
           )}
         >Yearly</span>
       </div>
-      <div className="flex justify-end div-wrap">
-        <button className="button-wrap mt-7 py-3 px-4 m-3" type="submit">Submit</button>
+      <div className="flex justify-between div-wrap">
+        <button className=" text-slate-400 font-medium mt-7 py-3 px-4 m-3" onClick={() => router.push("/home/userInfo")}>
+          Go Back
+        </button>
+
+        <button className="button-wrap mt-7 py-3 px-4 m-3" onClick={() => addType()}>Submit</button>
       </div>
     </div>
   );

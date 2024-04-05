@@ -69,9 +69,26 @@
   width: 100%;
   display: block;
 }
+
 .selected-plan-card{
   border-color: rgb(67 56 202);
   background-color: rgb(238 242 255);
+}
+.option-card{
+  border: 2px solid rgb(148 163 184);
+  border-radius: 10px;
+  width: 100%;
+}
+.custom-checkbox{
+  width: 30px;
+  height: 30px;
+  border:1px solid rgb(40, 38, 145);
+  border-radius: 5px;
+
+}
+.checkbox-filled{
+  background-color: rgb(40, 38, 145);
+
 }
 @media screen and (max-width:700px) {
   .div-wrap{

@@ -59,15 +59,15 @@ export default function DesktopSidebar({
         <div className={clsx(
           'circle',
           {
-            'bg-white': pathname === "",
-            '': pathname !== "",
+            'bg-white': pathname === "/home/addons",
+            '': pathname !== "/home/addons",
           },
         )}>
           <p className={clsx(
             'state-number ',
             {
-              'text-dark': pathname === "",
-              'text-white': pathname !== "",
+              'text-dark': pathname === "/home/addons",
+              'text-white': pathname !== "/home/addons",
             },
           )}>3</p>
         </div>
@@ -81,15 +81,15 @@ export default function DesktopSidebar({
         <div className={clsx(
           'circle',
           {
-            'bg-white': pathname === "",
-            '': pathname !== "",
+            'bg-white': pathname === "/home/checkout",
+            '': pathname !== "/home/checkout",
           },
         )}>
           <p className={clsx(
             'state-number ',
             {
-              'text-dark': pathname === "",
-              'text-white': pathname !== "",
+              'text-dark': pathname === "/home/checkout",
+              'text-white': pathname !== "/home/checkout",
             },
           )}>4</p>
         </div>
